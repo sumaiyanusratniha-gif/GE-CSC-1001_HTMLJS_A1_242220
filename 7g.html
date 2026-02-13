@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>7g Conversion</title>
+</head>
+<body>
+  <script>
+    function convertLength(length, from, to) {
+      if (from === 'miles' && to === 'km') {
+        return (length * 1.6) + ' km';
+      } else if (from === 'km' && to === 'miles') {
+        return (length / 1.6) + ' miles';
+      } else if (from === to) {
+        return length + ' ' + to;
+      } else {
+        return 'Invalid conversion';
+      }
+    }
+
+    console.log(convertLength(50, 'miles', 'km'));   // 80 km
+    console.log(convertLength(32, 'km', 'miles'));   // 20 miles
+    console.log(convertLength(50, 'km', 'km'));      // 50 km
+  </script>
+</body>
+</html>

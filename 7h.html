@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>7h Conversion</title>
+</head>
+<body>
+  <script>
+    function convertLength(length, from, to) {
+      // Convert input to feet
+      let inFeet;
+      if (from === 'miles') {
+        inFeet = length * 5280;
+      } else if (from === 'km') {
+        inFeet = length * 3281;
+      } else if (from === 'ft') {
+        inFeet = length;
+      } else {
+        return 'Invalid unit: ' + from;
+      }
+
+      // Convert feet to target unit
+      if (to === 'miles') {
+        return (inFeet / 5280) + ' miles';
+      } else if (to === 'km') {
+        return (inFeet / 3281) + ' km';
+      } else if (to === 'ft') {
+        return inFeet + ' ft';
+      } else {
+        return 'Invalid unit: ' + to;
+      }
+    }
+
+    console.log(convertLength(1, 'miles', 'ft'));     // 5280 ft
+    console.log(convertLength(1, 'km', 'ft'));        // 3281 ft
+    console.log(convertLength(5280, 'ft', 'miles'));  // 1 mile
+  </script>
+</body>
+</html>
